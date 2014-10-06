@@ -1,0 +1,19 @@
+dg_vote_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: DGVoteBundle:Default:index }
+
+dg_vote_add:
+    path:     /tito
+    defaults: { _controller: DGVoteBundle:Vote:index }
+
+dg_vote_sheet_add:
+    path:     /sheet/add
+    defaults: { _controller: DGVoteBundle:Sheet:add }
+
+dg_vote_sheet_edit:
+    path:     /sheet/edit/{id}
+    defaults: { _controller: DGVoteBundle:Sheet:edit }
+
+dg_vote_sheet_list:
+    path:     /sheet
+    defaults: { _controller: DGVoteBundle:Sheet:list }

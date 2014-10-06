@@ -1,0 +1,4 @@
+dg_vote:
+    resource: "@DGVoteBundle/Resources/config/routing.yml"
+    prefix:   /
+
