@@ -8,6 +8,7 @@ class VoteController extends Controller
 {
     public function indexAction(Request $request)
     {
+        
     }
 
 }

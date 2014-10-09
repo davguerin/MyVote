@@ -9,4 +9,5 @@
     <li><a href="{{ path('dg_vote_sheet_edit', {'id' : sheet.id}) }}">{{ sheet.name }}</a></li>
 {% endfor %}
 </ul>
+<a href="{{path('dg_vote_sheet_add')}}">Ajouter une fiche</a>
 {% endblock %}

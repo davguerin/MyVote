@@ -1,0 +1,4 @@
+services:
+#    dg_user.example:
+#        class: DG\UserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

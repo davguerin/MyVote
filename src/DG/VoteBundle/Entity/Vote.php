@@ -35,7 +35,7 @@ class Vote
     private $sheet;
 
     /**
-     * @ORM\ManyToOne(targetEntity="DG\VoteBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="DG\UserBundle\Entity\User")
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;

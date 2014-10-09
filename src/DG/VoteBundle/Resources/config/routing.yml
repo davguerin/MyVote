@@ -17,3 +17,7 @@ dg_vote_sheet_edit:
 dg_vote_sheet_list:
     path:     /sheet
     defaults: { _controller: DGVoteBundle:Sheet:list }
+
+dg_vote_vote_index:
+    path:     /
+    defaults: { _controller: DGVoteBundle:Sheet:list }
