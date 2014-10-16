@@ -1,10 +1,10 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}DGVoteBundle:Vote:index{% endblock %}
+{% block title %}Voter pour {{ sheet.name }}{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Vote:index page</h1>
+<h1>Voter pour {{ sheet.name }}</h1>
 
-{{ form(form) }}
+{{ form(vote) }}
 
 {% endblock %}

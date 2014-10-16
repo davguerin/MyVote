@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}DGVoteBundle:Sheet:index{% endblock %}
+
+{% block body %}
+<h1>Liste des fiches</h1>
+<ul>
+{% for sheet in sheets %}
+    <li>{{ sheet.name }} <a href="{{ path('dg_vote_vote_index', {'id' : sheet.id}) }}">Vote</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
