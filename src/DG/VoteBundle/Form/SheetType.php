@@ -16,7 +16,8 @@ class SheetType extends AbstractType
     {
         $builder
             ->add('name', 'text')
-            ->add('description', 'textarea')
+            ->add('description', 'textarea', array('required' => false))
+            ->add('file', 'file', array('required' => false, 'data_class' => null))
             ->add('save', 'submit')
         ;
     }

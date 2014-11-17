@@ -6,7 +6,9 @@
 <h1>Liste des fiches</h1>
 <ul>
 {% for sheet in sheets %}
-    <li><a href="{{ path('dg_vote_sheet_edit', {'id' : sheet.id}) }}">{{ sheet.name }}</a></li>
+    {% if rights == true or user.id == sheet.user.id %}
+    <li><a href="{{ path('dg_vote_sheet_edit', {'id' : sheet.id}) }}">{{ sheet.name }}</a> <a href="{{ path('dg_vote_sheet_delete', {'id' : sheet.id}) }}">X</a></li>
+    {% endif %}
 {% endfor %}
 </ul>
 <a href="{{path('dg_vote_sheet_add')}}">Ajouter une fiche</a>

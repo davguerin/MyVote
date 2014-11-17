@@ -18,9 +18,7 @@ class VoteController extends Controller
         
         $token = $this->get('security.context')->getToken();
         if(!empty($token))
-        {
             $user = $token->getUser();
-        }
         
         $vote = $this->getDoctrine()->getManager()->getRepository('DGVoteBundle:Vote')->findBy(array('sheet' => $sheet->getId(), 'user' => $user->getId()));
         

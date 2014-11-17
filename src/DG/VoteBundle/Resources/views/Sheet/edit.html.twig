@@ -3,7 +3,7 @@
 {% block title %}DGVoteBundle:Sheet:index{% endblock %}
 
 {% block body %}
-<h1>Formulaire de creation/édition de fiche</h1>
+<h1>Formulaire de création/édition de fiche</h1>
     {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
     {{ form_errors(form) }}
     <div class="form-group">
@@ -18,6 +18,16 @@
       {{ form_errors(form.description) }}
       <div class="col-sm-4">
         {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+    <div class="form-group">
+      {{ form_label(form.file, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+      {% if sheet is defined and sheet.image is not empty %}
+      <img src="{{ asset(img) }}" />
+      {% endif %}
+      {{ form_errors(form.file) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.file, {'attr': {'class': 'form-control'}}) }}
       </div>
     </div>
     {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}

@@ -6,6 +6,10 @@ dg_vote_sheet_edit:
     path:     /sheet/edit/{id}
     defaults: { _controller: DGVoteBundle:Sheet:edit }
 
+dg_vote_sheet_delete:
+    path:     /sheet/delete/{id}
+    defaults: { _controller: DGVoteBundle:Sheet:delete }
+
 dg_vote_sheet_list:
     path:     /sheet
     defaults: { _controller: DGVoteBundle:Sheet:list }
