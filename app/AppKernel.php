@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new DG\VoteBundle\DGVoteBundle(),
             new DG\UserBundle\DGUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

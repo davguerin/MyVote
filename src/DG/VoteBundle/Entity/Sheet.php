@@ -176,12 +176,9 @@ class Sheet
         return 'images';
     }
     
-    /**
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     */
     public function preUpload()
     {
+        echo 'b';
         if (null !== $this->file) {
             // faites ce que vous voulez pour générer un nom unique
             $this->image = sha1(uniqid(mt_rand(), true)).'.'.$this->file->guessExtension();
@@ -194,6 +191,7 @@ class Sheet
      */
     public function uploadImage()
     {
+        echo 'd';
         if($this->file === null)
             return;
         

@@ -1,0 +1,5 @@
+{% if app.user %}
+<a href="{{path('fos_user_security_logout')}}">Logout</a>
+<a href="{{path('dg_vote_sheet_list')}}">Sheets</a>
+<a href="{{path('dg_vote_vote_list')}}">Votes</a>
+{% endif %}

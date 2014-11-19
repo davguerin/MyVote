@@ -49,6 +49,8 @@ class SheetController extends Controller
         if($form->isValid())
         {
             $em = $this->getDoctrine()->getManager();
+            if(!empty($sheet->file))
+                $sheet->preUpload();
             $em->persist($sheet);
             $em->flush();
 
@@ -82,6 +84,8 @@ class SheetController extends Controller
         if($form->isValid())
         {
             $em = $this->getDoctrine()->getManager();
+            if(!empty($sheet->file))
+                $sheet->preUpload();
             $em->persist($sheet);
             $em->flush();
 

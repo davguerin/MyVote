@@ -1,4 +1,4 @@
-{% extends "::base.html.twig" %}
+{% extends "DGVoteBundle::layout.html.twig" %}
 
 {% block title %}DGVoteBundle:Sheet:index{% endblock %}
 
@@ -6,7 +6,17 @@
 <h1>Liste des fiches</h1>
 <ul>
 {% for sheet in sheets %}
-    <li>{{ sheet.name }} <a href="{{ path('dg_vote_vote_index', {'id' : sheet.id}) }}">Vote</a></li>
+    <li>
+        {% if sheet.image is not empty %}
+        {% set image_path = sheet.getWebPath() %}
+        <img src="{{ asset(image_path) | apply_filter('my_thumb') }}" />
+        {% endif %}
+        {{ sheet.name }}<br />
+        {% set votes = vote.count(sheet.id) %}
+        {% set average = vote.average(sheet.id) %}
+        Note moyenne : {{ average | round(1, 'common') }} ({{ votes }} votes)
+        <a href="{{ path('dg_vote_vote_index', {'id' : sheet.id}) }}">Vote</a>
+    </li>
 {% endfor %}
 </ul>
 {% endblock %}

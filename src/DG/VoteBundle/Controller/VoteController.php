@@ -11,7 +11,6 @@ class VoteController extends Controller
 {
     public function indexAction($id, Request $request)
     {
-        
         $sheet = $this->getDoctrine()->getManager()->getRepository('DGVoteBundle:Sheet')->find($id);
         if($sheet == null)
             throw new NotFoundHttpException('La fiche '.$id.' n\'existe pas');
@@ -55,8 +54,11 @@ class VoteController extends Controller
         
         $sheets = $repository->findBy(array(), array('name' => 'asc'));
         
+        $vote = $this->getDoctrine()->getManager()->getRepository('DGVoteBundle:Vote');
+        
         return $this->render('DGVoteBundle:Vote:list.html.twig', array(
             'sheets' => $sheets,
+            'vote' => $vote
         ));
     }
 }

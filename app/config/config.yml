@@ -75,3 +75,9 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: DG\UserBundle\Entity\User
+
+avalanche_imagine:
+    filters:
+        my_thumb:
+            type:    thumbnail
+            options: { size: [90, 120], mode: inset }
