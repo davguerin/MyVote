@@ -46,4 +46,23 @@ class SheetTest extends WebTestCase
         
         $this->assertEquals('test_name', $user_result->getUsername());
     }
+    
+    public function testAbsolutePath()
+    {
+        $sheet = new Sheet();
+        $sheet->setImage('test.png');
+        
+        $path = $sheet->getAbsolutePath();
+        
+        $this->assertEquals('C:\wamp\www\MyVote\src\DG\VoteBundle\Entity/../../../../web/images/test.png', $path);
+    }
+    
+    public function testWebPath()
+    {
+        $sheet = new Sheet();
+        $sheet->setImage('test.png');
+        
+        $path = $sheet->getWebPath();
+        $this->assertEquals('images/test.png', $path);
+    }
 }
