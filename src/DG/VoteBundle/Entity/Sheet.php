@@ -51,6 +51,8 @@ class Sheet
 
     public $file;
     
+    private $last_image_name;
+
     /**
      * Get id
      *
@@ -178,9 +180,9 @@ class Sheet
     
     public function preUpload()
     {
-        echo 'b';
         if (null !== $this->file) {
-            // faites ce que vous voulez pour générer un nom unique
+            if(!empty($this->image))
+                $this->last_image_name = $this->image;
             $this->image = sha1(uniqid(mt_rand(), true)).'.'.$this->file->guessExtension();
         }
     }
@@ -191,13 +193,15 @@ class Sheet
      */
     public function uploadImage()
     {
-        echo 'd';
         if($this->file === null)
             return;
         
         $this->file->move($this->getUploadRootDir(), $this->image);
         
         $this->file = $this->image;
+        
+        if(!empty($this->last_image_name))
+            unlink($this->getUploadRootDir().'/'.$this->last_image_name);
     }
     
     /**
