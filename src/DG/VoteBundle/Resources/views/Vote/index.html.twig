@@ -23,5 +23,15 @@
     {{ form_widget(vote.submit, {'attr': {'class': 'btn btn-primary'}}) }}
     {{ form_rest(vote) }}
     {{ form_end(vote) }}
+    
+    {% for vote in sheet_votes %}
+        {% if vote.description %}
+        <div>
+            {{ vote.user.username }}<br />
+            Vote : {{ vote.vote }}<br />
+            {{ vote.description }}
+        </div>
+        {% endif %}
+    {% endfor %}
 
 {% endblock %}

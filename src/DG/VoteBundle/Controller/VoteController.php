@@ -42,10 +42,12 @@ class VoteController extends Controller
             $request->getSession()->getFlashBag()->add('notice', 'Vote enregistrée');
             return $this->redirect($this->generateUrl('dg_vote_vote_list'));
         }
+        $sheet_votes = $this->getDoctrine()->getManager()->getRepository('DGVoteBundle:Vote')->findBy(array('sheet' => $sheet->getId()));
         
         return $this->render('DGVoteBundle:Vote:index.html.twig', array(
             'vote' => $form->createView(),
-            'sheet' => $sheet
+            'sheet' => $sheet,
+            'sheet_votes' => $sheet_votes,
         ));
     }
     
