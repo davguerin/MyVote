@@ -4,7 +4,24 @@
 
 {% block body %}
 <h1>Voter pour {{ sheet.name }}</h1>
+    {{ form_start(vote, {'attr': {'class': 'form-horizontal'}}) }}
+    <div class="form-group">
+      {{ form_label(vote.vote, "Vote", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+      {{ form_errors(vote.vote) }}
+      <div class="col-sm-4">
+        {{ form_widget(vote.vote, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+    <div class="form-group">
+      {{ form_label(vote.description, "Description", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+      {{ form_errors(vote.description) }}
+      <div class="col-sm-4">
+        {{ form_widget(vote.description, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
 
-{{ form(vote) }}
+    {{ form_widget(vote.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+    {{ form_rest(vote) }}
+    {{ form_end(vote) }}
 
 {% endblock %}

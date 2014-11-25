@@ -1,6 +1,4 @@
-<?php
-
-namespace DG\VoteBundle\Tests\Controller;
+<?php namespace DG\VoteBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

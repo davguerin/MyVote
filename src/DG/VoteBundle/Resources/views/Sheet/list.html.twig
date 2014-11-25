@@ -7,7 +7,7 @@
 <ul>
 {% for sheet in sheets %}
     {% if rights == true or user.id == sheet.user.id %}
-    <li><a href="{{ path('dg_vote_sheet_edit', {'id' : sheet.id}) }}">{{ sheet.name }}</a> <a href="{{ path('dg_vote_sheet_delete', {'id' : sheet.id}) }}">X</a></li>
+    <li><a href="{{ path('dg_vote_sheet_edit', {'id' : sheet.id}) }}" alt="Edit">{{ sheet.name }}</a> <a href="{{ path('dg_vote_sheet_delete', {'id' : sheet.id}) }}">X</a></li>
     {% endif %}
 {% endfor %}
 </ul>

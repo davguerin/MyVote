@@ -20,6 +20,13 @@ class Vote
     private $vote;
 
     /**
+     * @var text
+     * 
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+    
+    /**
      * @ORM\Id
      * @ORM\ManyToOne(targetEntity="DG\VoteBundle\Entity\Sheet")
      * @ORM\JoinColumn(nullable=false)
@@ -32,16 +39,6 @@ class Vote
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set vote
@@ -110,5 +107,28 @@ class Vote
     public function getSheet()
     {
         return $this->sheet;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Vote
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }
