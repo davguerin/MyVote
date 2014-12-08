@@ -19,5 +19,9 @@ dg_vote_vote_index:
     defaults: { _controller: DGVoteBundle:Vote:index }
 
 dg_vote_vote_list:
-    path:     /
+    path:     /list
     defaults: { _controller: DGVoteBundle:Vote:list }
+
+dg_vote_vote_random:
+    path:   /
+    defaults: { _controller: DGVoteBundle:Vote:random }

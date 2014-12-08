@@ -1,0 +1,48 @@
+{% extends "DGVoteBundle::layout.html.twig" %}
+
+{% block title %}
+{% if no_more %}
+Plus de votes disponnibles
+{% else %}
+Voter pour {{ sheet.name }}
+{% endif %}
+{% endblock %}
+
+{% block body %}
+    {% if no_more %}
+        <div>
+            Vous avez voté pour tous les films, <a href="{{ path('dg_vote_vote_list') }}">cliquez ici</a> pour séléctionner un film et changer votre note si vous le souhaitez
+        </div>
+    {% else %}
+<h1>Voter pour {{ sheet.name }}</h1>
+    {{ form_start(vote, {'attr': {'class': 'form-horizontal'}}) }}
+    <div class="form-group">
+      {{ form_label(vote.vote, "Vote", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+      {{ form_errors(vote.vote) }}
+      <div class="col-sm-4">
+        {{ form_widget(vote.vote, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+    <div class="form-group">
+      {{ form_label(vote.description, "Commentaire", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+      {{ form_errors(vote.description) }}
+      <div class="col-sm-4">
+        {{ form_widget(vote.description, {'attr': {'class': 'form-control'}}) }}
+      </div>
+    </div>
+
+    {{ form_widget(vote.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+    {{ form_rest(vote) }}
+    {{ form_end(vote) }}
+    
+    {% for vote in sheet_votes %}
+        {% if vote.description %}
+        <div>
+            {{ vote.user.username }}<br />
+            Vote : {{ vote.vote }}<br />
+            {{ vote.description }}
+        </div>
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+{% endblock %}

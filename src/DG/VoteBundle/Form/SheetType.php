@@ -17,6 +17,26 @@ class SheetType extends AbstractType
         $builder
             ->add('name', 'text')
             ->add('description', 'textarea', array('required' => false))
+            ->add('launch_date_theater_us', 'date', array('required' => false,
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'dd/MM/yyyy',
+                'attr' => array('class' => 'date')))
+            ->add('launch_date_theater_fr', 'date', array('required' => false,
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'dd/MM/yyyy',
+                'attr' => array('class' => 'date')))
+            ->add('launch_date_dvd', 'date', array('required' => false,
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'dd/MM/yyyy',
+                'attr' => array('class' => 'date')))
+            ->add('launch_date_blue_ray', 'date', array('required' => false,
+                'widget' => 'single_text',
+                'input' => 'datetime',
+                'format' => 'dd/MM/yyyy',
+                'attr' => array('class' => 'date')))
             ->add('file', 'file', array('required' => false, 'data_class' => null))
             ->add('save', 'submit')
         ;

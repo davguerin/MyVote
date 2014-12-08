@@ -20,7 +20,9 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/doctrine-fixtures-bundle": "~2.2",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "avalanche123/imagine-bundle": "v2.1"
+        "avalanche123/imagine-bundle": "v2.1",
+        "friendsofsymfony/elastica-bundle": "~3.0",
+        "jms/serializer-bundle": "0.12.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

@@ -21,6 +21,34 @@
       </div>
     </div>
     <div class="form-group">
+      {{ form_label(form.launch_date_theater_us, "Sortie US (cinema)", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+      {{ form_errors(form.launch_date_theater_us) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.launch_date_theater_us, {'attr': {'class': 'form-control date'}}) }}
+      </div>
+    </div>
+    <div class="form-group">
+      {{ form_label(form.launch_date_theater_fr, "Sortie FR (cinema)", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+      {{ form_errors(form.launch_date_theater_fr) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.launch_date_theater_fr, {'attr': {'class': 'form-control date'}}) }}
+      </div>
+    </div>
+    <div class="form-group">
+      {{ form_label(form.launch_date_dvd, "Sortie DVD", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+      {{ form_errors(form.launch_date_dvd) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.launch_date_dvd, {'attr': {'class': 'form-control date'}}) }}
+      </div>
+    </div>
+    <div class="form-group">
+      {{ form_label(form.launch_date_blue_ray, "Sortie Blue Ray", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+      {{ form_errors(form.launch_date_blue_ray) }}
+      <div class="col-sm-4">
+        {{ form_widget(form.launch_date_blue_ray, {'attr': {'class': 'form-control date'}}) }}
+      </div>
+    </div>
+    <div class="form-group">
       {{ form_label(form.file, "Image", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
       {% if sheet is defined and sheet.image is not empty %}
       <img src="{{ asset(img) }}" />

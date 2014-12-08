@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new DG\UserBundle\DGUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
+            new FOS\ElasticaBundle\FOSElasticaBundle(),
+            new \JMS\SerializerBundle\JMSSerializerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

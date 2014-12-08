@@ -13,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Vote
 {
     /**
+     * @var type 
+     */
+    private $id;
+    
+    
+    /**
      * @var integer
      *
      * @ORM\Column(name="vote", type="smallint")
@@ -22,7 +28,7 @@ class Vote
     /**
      * @var text
      * 
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
     
@@ -40,6 +46,16 @@ class Vote
      */
     private $user;
 
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    
     /**
      * Set vote
      *

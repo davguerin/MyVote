@@ -48,6 +48,34 @@ class Sheet
      * @ORM\Column(name="image", type="text", nullable=true)
      */
     private $image;
+    
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="launch_date_theater_us", type="datetime", nullable=true)
+     */
+    private $launch_date_theater_us;
+    
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="launch_date_theater_fr", type="datetime", nullable=true)
+     */
+    private $launch_date_theater_fr;
+    
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="launch_date_dvd", type="datetime", nullable=true)
+     */
+    private $launch_date_dvd;
+    
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="launch_date_blue_ray", type="datetime", nullable=true)
+     */
+    private $launch_date_blue_ray;
 
     public $file;
     
@@ -209,5 +237,97 @@ class Sheet
     {
         if ($file = $this->getAbsolutePath())
             unlink($file);
+    }
+
+    /**
+     * Set launch_date_theater_us
+     *
+     * @param \DateTime $launchDateTheaterUs
+     * @return Sheet
+     */
+    public function setLaunchDateTheaterUs($launchDateTheaterUs)
+    {
+        $this->launch_date_theater_us = $launchDateTheaterUs;
+
+        return $this;
+    }
+
+    /**
+     * Get launch_date_theater_us
+     *
+     * @return \DateTime 
+     */
+    public function getLaunchDateTheaterUs()
+    {
+        return $this->launch_date_theater_us;
+    }
+
+    /**
+     * Set launch_date_theater_fr
+     *
+     * @param \DateTime $launchDateTheaterFr
+     * @return Sheet
+     */
+    public function setLaunchDateTheaterFr($launchDateTheaterFr)
+    {
+        $this->launch_date_theater_fr = $launchDateTheaterFr;
+
+        return $this;
+    }
+
+    /**
+     * Get launch_date_theater_fr
+     *
+     * @return \DateTime 
+     */
+    public function getLaunchDateTheaterFr()
+    {
+        return $this->launch_date_theater_fr;
+    }
+
+    /**
+     * Set launch_date_dvd
+     *
+     * @param \DateTime $launchDateDvd
+     * @return Sheet
+     */
+    public function setLaunchDateDvd($launchDateDvd)
+    {
+        $this->launch_date_dvd = $launchDateDvd;
+
+        return $this;
+    }
+
+    /**
+     * Get launch_date_dvd
+     *
+     * @return \DateTime 
+     */
+    public function getLaunchDateDvd()
+    {
+        return $this->launch_date_dvd;
+    }
+
+    /**
+     * Set launch_date_blue_ray
+     *
+     * @param \DateTime $launchDateBlueRay
+     * @return Sheet
+     */
+    public function setLaunchDateBlueRay($launchDateBlueRay)
+    {
+        $this->launch_date_blue_ray = $launchDateBlueRay;
+
+        return $this;
+    }
+
+    /**
+     * Get launch_date_blue_ray
+     *
+     * @return \DateTime 
+     */
+    public function getLaunchDateBlueRay()
+    {
+        return $this->launch_date_blue_ray;
     }
 }

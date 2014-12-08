@@ -81,3 +81,41 @@ avalanche_imagine:
         my_thumb:
             type:    thumbnail
             options: { size: [90, 120], mode: inset }
+            
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    serializer:
+        callback_class: FOS\ElasticaBundle\Serializer\Callback
+        serializer: serializer
+    indexes:
+        dg:
+            client: default
+            types:
+                Sheet:
+                    mappings: 
+                        name: 
+                            boost: 10
+                            type: string
+                            analyzer: english
+                            fields:
+                                raw:
+                                    type: string
+                                    index: not_analyzed
+                        description:
+                    persistence:
+                        driver: orm
+                        model:  DG\VoteBundle\Entity\Sheet
+                        provider: ~
+                        listener: ~
+                        finder: ~
+                        repository: DG\VoteBundle\Entity\SheetRepository
+                Vote:
+                    mappings: ~
+                    persistence:
+                        driver: orm
+                        model:  DG\VoteBundle\Entity\Vote
+                        provider: ~
+                        listener: ~
+                        finder: ~
+                        repository: DG\VoteBundle\Entity\VoteRepository

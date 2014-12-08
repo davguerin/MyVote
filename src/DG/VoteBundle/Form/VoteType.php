@@ -22,7 +22,7 @@ class VoteType extends AbstractType
                 'multiple' => false,
                 'expanded' => true
             ))
-            ->add('description', 'textarea')
+            ->add('description', 'textarea', array('required' => false))
             ->add('submit', 'submit')
         ;
     }
